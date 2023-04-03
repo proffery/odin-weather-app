@@ -1,5 +1,6 @@
 import './style.css'
 import logoImg from './img/106169566.jpg'
-import getWeather from './apiFunctions';
+import { getWeather, getLocation } from './apiFunctions';
 
-getWeather('Gomel');
+console.log(getWeather(`${getLocation()}`));
+//getLocation();
