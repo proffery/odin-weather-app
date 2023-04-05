@@ -15,7 +15,7 @@
 }
 
 body {
-    background-color: aqua;
+    background-color: var(--background-color-main);
     font-size: var(--main-font);
 }
 
@@ -30,9 +30,50 @@ body {
     margin: 1rem;
 }
 
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    background-color: var(--background-color-main);
+    border: 1px solid;
+    border-radius: 1rem;
+    padding-left: .5rem;
+    font-size: calc(var(--main-font) - .4rem);
+}
+
+.input:focus {
+    border: 1px solid blue;
+}
+
+.input:invalid {
+    border: 1px solid red;
+}
+
+/* .input::placeholder {
+    text-align: center;
+} */
+
+.submit {
+    display: flex;
+    align-items: center;
+}
+.img-submit {
+    width: calc(var(--main-font));
+}
+
 .weather {
     display: flex;
     align-items: center;
+    margin: 1rem;
 }
 
 .country, .city, .temp {
@@ -41,7 +82,6 @@ body {
 
 .icon {
     width: calc(var(--main-font) + 1.5rem);
-
 }
 
 .footer {
