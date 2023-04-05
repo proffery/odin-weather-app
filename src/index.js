@@ -10,6 +10,7 @@ const temp = document.querySelector('.temp');
 const country = document.querySelector('.country');
 const submitButton = document.querySelector('.submit');
 const inputCity = document.getElementById('input-city');
+const from = document.querySelector('.form');
 
 
 function setWeather(cityName) {
@@ -19,14 +20,17 @@ function setWeather(cityName) {
         icon.src = value.icon;
         icon.title = value.condition;
         temp.textContent = value.temp_c + '°C';
-        console.log(value.city);
     });
 }
 
 
 submitButton.addEventListener('click', () => {
+    //e.preventDefault();
     setWeather(inputCity.value);
-    console.log(inputCity.value);
+});
+from.addEventListener('submit', (e) => {
+    e.preventDefault();
+    setWeather(inputCity.value);
 });
 
 setWeather();

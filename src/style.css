@@ -28,6 +28,7 @@ body {
 
 .header {
     margin: 1rem;
+    text-align: center;
 }
 
 .form {
@@ -68,15 +69,22 @@ body {
 }
 .img-submit {
     width: calc(var(--main-font));
+    margin-left: .5rem;
 }
 
 .weather {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    text-align: center;
     margin: 1rem;
 }
 
 .country, .city, .temp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     margin-right: 1rem;
 }
 

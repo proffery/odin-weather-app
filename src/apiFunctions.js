@@ -11,7 +11,6 @@ const weather = (() => {
       return cleanWeatherObj;
   
     } catch(err) {
-      console.log(err.message);
       const location = await getLocation()
       const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${location}`, {mode: 'cors'});
       const weatherObj = await response.json();

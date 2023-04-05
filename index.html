@@ -9,12 +9,12 @@
 <body>
     <div class="container">
         <h1 class="header">Weather App</h1>
-        <form class="form">
+        <form class="form" action="">
             <div class="form-container">
+                <input class="input" type="text" minlength="3" maxlength="20" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" id="input-city" placeholder="City name">
                 <div class="submit">
-                    <img class="img-submit" src="/image/magnify.svg" alt="search">
+                    <img class="img-submit" src="/image/magnify.svg" alt="submit">
                 </div>
-                <input class="input" type="text" minlength="3" maxlength="20" pattern="^[A-Za-z]+$" id="input-city" placeholder="City name">
             </div>
         </form>
         <div class="weather">
