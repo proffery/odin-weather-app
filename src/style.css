@@ -1,10 +1,9 @@
 :root {
     --main-font: clamp(16px, calc(16px + (28 - 16) * ((100vw - 360px) / 1560)), 28px);
-    --font-color: rgb(0, 0, 0);
-    --background-color-main: rgb(230, 243, 241);
-    --background-color-block: rgb(255, 255, 255);
-    --shadow-window: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    --shadow-line: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    --font-color: rgb(228, 231, 224);
+    --background-color-main: rgba(209, 219, 218, 0.479);
+    --background-color-block: rgba(32, 31, 31, 0.63);
+    --shadow-line: rgb(0, 0, 0) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 * {
@@ -15,19 +14,39 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-color: var(--background-color-main);
     font-size: var(--main-font);
+    background-image: url("../dist/image/tealbluebackground.svg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--font-color);
 }
 
 .container {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
     display: flex;
     flex-direction: column;
+    align-self: center;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--shadow-line);
+    padding: 1rem;
+    border-radius: 1rem;
+    width: clamp(250px, 30vw, 60rem);
+    height: 30rem;
+    background-color: var(--background-color-block);
+    background: linear-gradient(90deg, rgba(36, 36, 44, 0.651) 0%, rgba(237, 237, 240, 0.329) 35%, rgba(36, 37, 37, 0.397) 100%);
 }
 
 .header {
-    margin: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
     text-align: center;
 }
 
@@ -35,20 +54,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 1rem;
 }
 
 .form-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    margin: 0;
 }
 
 .input {
+    width: calc(var(--main-font) + 10rem);;
     background-color: var(--background-color-main);
-    border: 1px solid;
+    border: 1px solid var(--background-color-main);
     border-radius: 1rem;
     padding-left: .5rem;
+    margin: auto;
     font-size: calc(var(--main-font) - .4rem);
+}
+
+.input::placeholder{
+    color: var(--font-color);
+
 }
 
 .input:focus {
@@ -59,10 +87,6 @@ body {
     border: 1px solid red;
 }
 
-/* .input::placeholder {
-    text-align: center;
-} */
-
 .submit {
     display: flex;
     align-items: center;
@@ -70,14 +94,16 @@ body {
 .img-submit {
     width: calc(var(--main-font));
     margin-left: .5rem;
+    filter: invert();
 }
 
 .weather {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    margin: 1rem;
+    padding-bottom: 1rem;
 }
 
 .country, .city, .temp {
@@ -92,10 +118,43 @@ body {
     width: calc(var(--main-font) + 1.5rem);
 }
 
+.feel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.feel-temp {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.wind {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.wind-speed {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
 .footer {
-    position: static;
+    position: absolute;
     display: flex;
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     align-items: center;
     justify-content: center;
     font-size: calc(var(--main-font) - 3px);

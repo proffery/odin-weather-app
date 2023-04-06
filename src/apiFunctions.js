@@ -7,7 +7,7 @@ const weather = (() => {
       const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${city}`, {mode: 'cors'});
       const weatherObj = await response.json();
       let cleanWeatherObj = await getData(weatherObj);
-      //console.log(cleanWeatherObj);
+      console.log(weatherObj);
       return cleanWeatherObj;
   
     } catch(err) {
@@ -15,7 +15,7 @@ const weather = (() => {
       const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${location}`, {mode: 'cors'});
       const weatherObj = await response.json();
       let cleanWeatherObj = await getData(weatherObj);
-      //console.log(cleanWeatherObj);
+      console.log(weatherObj);
       return cleanWeatherObj
     }
   }
@@ -43,7 +43,8 @@ const weather = (() => {
       condition: data.current.condition.text,
       icon: data.current.condition.icon,
       wind_kph: data.current.wind_kph,
-      wind_mph: data.current.wind_mph
+      wind_mph: data.current.wind_mph,
+      wind_dir: data.current.wind_dir
     });
 
     return JSON.parse(tempObj)
