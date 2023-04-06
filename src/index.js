@@ -15,6 +15,7 @@ const from = document.querySelector('.form');
 const feelTemp = document.querySelector('.feel-temp');
 const windSpeed = document.querySelector('.wind-speed');
 const windDirection = document.querySelector('.wind-direction');
+const slider = document.querySelector('.slider-input')
 
 function setWeather(cityName) {
     weather.getWeather(cityName).then((value) => {
@@ -22,14 +23,23 @@ function setWeather(cityName) {
         city.textContent = value.city + ':';
         icon.src = value.icon;
         icon.title = value.condition;
-        temp.textContent = value.temp_c + '°C';
-        feelTemp.textContent = value.feelslike_c + '°C';
+        if (slider.checked) {
+            temp.textContent = value.temp_f + 'F';
+            feelTemp.textContent = value.feelslike_f + 'F';
+        }
+        else {
+            temp.textContent = value.temp_c + '°C';
+            feelTemp.textContent = value.feelslike_c + '°C';
+        }
         windSpeed.textContent = value.wind_kph + 'km/h,';
         windDirection.textContent = value.wind_dir;
         console.log(value);
     });
 }
 
+slider.addEventListener('click', () => {
+    setWeather(inputCity.value);
+});
 
 submitButton.addEventListener('click', () => {
     setWeather(inputCity.value);
