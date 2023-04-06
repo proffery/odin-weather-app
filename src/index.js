@@ -15,9 +15,13 @@ const from = document.querySelector('.form');
 const feelTemp = document.querySelector('.feel-temp');
 const windSpeed = document.querySelector('.wind-speed');
 const windDirection = document.querySelector('.wind-direction');
-const slider = document.querySelector('.slider-input')
+const slider = document.querySelector('.slider-input');
+const imgSubmit = document.querySelector('.img-submit');
+const githubLogo = document.querySelector('.github-mark');
 
 function setWeather(cityName) {
+    imgSubmit.src = magnify;
+    githubLogo.src = logoImg;
     weather.getWeather(cityName).then((value) => {
         country.textContent = value.country + ',';
         city.textContent = value.city + ':';
