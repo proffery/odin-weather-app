@@ -46,7 +46,6 @@ body {
 
 .header {
     margin-bottom: 1rem;
-    margin-top: 1rem;
     text-align: center;
 }
 
@@ -143,7 +142,7 @@ body {
 .feel-temp {
     display: flex;
     align-items: center;
-    margin-left: 1rem;
+    margin-left: .5rem;
 }
 
 .wind {
@@ -158,8 +157,8 @@ body {
 .wind-speed {
     display: flex;
     align-items: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
 }
 
 
@@ -179,11 +178,24 @@ body {
 .github-mark {
     width: var(--main-font);
     border-radius: 1rem;
+    margin: .2rem;
     transition: all .3s;
 }
 
 .github-mark:hover {
     transform: rotate(360deg);
+}
+
+.footer p {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    color: var(--font-color);
+    text-decoration: none;
+    text-shadow: var(--shadow-line);
+    text-align: center;
 }
 
 .slider-container {

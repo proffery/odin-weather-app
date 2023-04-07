@@ -37,7 +37,6 @@ function setWeather(cityName) {
         }
         windSpeed.textContent = value.wind_kph + 'km/h,';
         windDirection.textContent = value.wind_dir;
-        console.log(value);
     });
 }
 

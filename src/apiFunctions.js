@@ -7,7 +7,6 @@ const weather = (() => {
       const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${city}`, {mode: 'cors'});
       const weatherObj = await response.json();
       let cleanWeatherObj = await getData(weatherObj);
-      console.log(weatherObj);
       return cleanWeatherObj;
   
     } catch(err) {
@@ -15,7 +14,6 @@ const weather = (() => {
       const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${location}`, {mode: 'cors'});
       const weatherObj = await response.json();
       let cleanWeatherObj = await getData(weatherObj);
-      console.log(weatherObj);
       return cleanWeatherObj
     }
   }
@@ -24,7 +22,6 @@ const weather = (() => {
     try {
       const response = await fetch(`https://api.bigdatacloud.net/data/ip-geolocation?key=${LOCATION_BY_OP_API_KEY}`, {mode: 'cors'});
       const locationData = await response.json();
-      //console.log(locationData.location.city);
       return locationData.location.city;
   
     } catch(err) {
