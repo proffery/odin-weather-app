@@ -163,8 +163,9 @@ body {
 
 
 .footer {
-    position: absolute;
+    position: fixed;
     display: flex;
+    width:max-content;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -178,7 +179,6 @@ body {
 .github-mark {
     width: var(--main-font);
     border-radius: 1rem;
-    margin: .2rem;
     transition: all .3s;
 }
 
@@ -196,6 +196,8 @@ a {
     text-decoration: none;
     text-shadow: var(--shadow-line);
     text-align: center;
+    padding: .1rem;
+
 }
 
 .slider-container {
